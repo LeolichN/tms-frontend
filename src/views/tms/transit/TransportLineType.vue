@@ -108,85 +108,85 @@
 
     <!--  model  -->
     <div>
-      <Modal
+      <el-dialog
         v-model="modal2"
         title="修改线路类型信息"
         @on-ok="updataTransportLineType"
         @on-cancel="cancel"
       >
-        <Form
+        <el-form
           :model="updateTransportLineTypeData"
           label-position="left"
           :label-width="100"
         >
-          <FormItem label="线路类型编号">
-            <Input v-model="updateTransportLineTypeData.endAgencyType"></Input>
-          </FormItem>
-          <FormItem label="线路类型名称">
-            <Input v-model="updateTransportLineTypeData.name"></Input>
-          </FormItem>
-          <FormItem label="起始机构类型">
-            <Select v-model="updateTransportLineTypeData.startAgencyType">
-              <Option
+          <el-form-item label="线路类型编号">
+            <el-input v-model="updateTransportLineTypeData.endAgencyType"></el-input>
+          </el-form-item>
+          <el-form-item label="线路类型名称">
+            <el-input v-model="updateTransportLineTypeData.name"></el-input>
+          </el-form-item>
+          <el-form-item label="起始机构类型">
+            <el-select v-model="updateTransportLineTypeData.startAgencyType">
+              <el-option
                 v-for="(data, index) in orgList"
                 :key="index"
                 :value="data.id"
-                >{{ data.name }}</Option
+                >{{ data.name }}</el-option
               >
-            </Select>
-          </FormItem>
-          <FormItem label="终点机构类型">
-            <Select v-model="updateTransportLineTypeData.endAgencyType">
-              <Option
+            </el-select>
+          </el-form-item>
+          <el-form-item label="终点机构类型">
+            <el-select v-model="updateTransportLineTypeData.endAgencyType">
+              <el-option
                 v-for="(data, index) in orgList"
                 :key="index"
                 :value="data.id"
-                >{{ data.name }}</Option
+                >{{ data.name }}</el-option
               >
-            </Select>
-          </FormItem>
-        </Form>
-      </Modal>
+            </el-select>
+          </el-form-item>
+        </el-form>
+      </el-dialog>
 
-      <Modal
+      <el-dialog
         v-model="modal"
         title="添加线路类型信息"
         @on-ok="addTransportLineType"
         @on-cancel="cancel"
       >
-        <Form
+        <el-form
           :model="addTransportLineTypeData"
           label-position="left"
           :label-width="100"
         >
-          <FormItem label="线路类型编号">
-            <Input v-model="addTransportLineTypeData.typeNumber"></Input>
-          </FormItem>
-          <FormItem label="线路类型名称">
-            <Input v-model="addTransportLineTypeData.name"></Input>
-          </FormItem>
-          <FormItem label="起始机构类型">
-            <Select v-model="addTransportLineTypeData.startAgencyType">
-              <Option
+          <el-form-item label="线路类型编号">
+            <el-input v-model="addTransportLineTypeData.typeNumber"></el-input>
+          </el-form-item>
+          <el-form-item label="线路类型名称">
+            <el-input v-model="addTransportLineTypeData.name"></el-input>
+          </el-form-item>
+          <el-form-item label="起始机构类型">
+            <el-select v-model="addTransportLineTypeData.startAgencyType">
+              <el-option
                 v-for="(data, index) in orgList"
                 :key="index"
                 :value="data.id"
-                >{{ data.name }}</Option
+                >{{ data.name }}</el-option
               >
-            </Select>
-          </FormItem>
-          <FormItem label="终点机构类型">
-            <Select v-model="addTransportLineTypeData.endAgencyType">
-              <Option
+            </el-select>
+          </el-form-item>
+          <el-form-item label="终点机构类型">
+            <el-select v-model="addTransportLineTypeData.endAgencyType">
+              <el-option
                 v-for="(data, index) in orgList"
                 :key="index"
                 :value="data.id"
-                >{{ data.name }}</Option
+                >{{ data.name }}</el-option
               >
-            </Select>
-          </FormItem>
-        </Form>
-      </Modal>
+            </el-select>
+          </el-form-item>
+        </el-form>
+      </el-dialog>
     </div>
   </div>
 </template>

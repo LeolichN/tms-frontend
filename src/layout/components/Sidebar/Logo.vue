@@ -6,7 +6,7 @@
         <h1 v-else class="sidebar-title">{{ title }}</h1>
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
-        <img v-if="logo" class="sidebar-logo" :src="logo" />
+        <!-- <img v-if="logo" class="sidebar-logo" :src="logo" /> -->
         <h1 class="sidebar-title">{{ $t('system.title') }}</h1>
       </router-link>
     </transition>
@@ -24,7 +24,7 @@ export default {
   },
   computed: {
     logo() {
-      return require('@/assets/logo.png')
+      // return require('@/assets/logo.png')
     }
   }
 }

@@ -7,45 +7,45 @@
             <h3>基本信息</h3>
             <div style="display: flex; justify-content: space-around">
               <div style="width: 400px">
-                <Form
+                <el-form
                   :model="truckDriverData"
                   label-position="left"
                   :label-width="80"
                 >
-                  <FormItem label="员工编号">
-                    <Input disabled v-model="truckDriverData.id"></Input>
-                  </FormItem>
-                  <FormItem label="所属机构">
-                    <Input disabled v-model="truckDriverData.orgName"></Input>
-                  </FormItem>
-                  <FormItem label="电话">
-                    <Input disabled v-model="truckDriverData.mobile"></Input>
-                  </FormItem>
-                </Form>
+                  <el-form-item label="员工编号">
+                    <el-input disabled v-model="truckDriverData.id"></el-input>
+                  </el-form-item>
+                  <el-form-item label="所属机构">
+                    <el-input disabled v-model="truckDriverData.orgName"></el-input>
+                  </el-form-item>
+                  <el-form-item label="电话">
+                    <el-input disabled v-model="truckDriverData.mobile"></el-input>
+                  </el-form-item>
+                </el-form>
               </div>
 
               <div style="width: 400px">
-                <Form
+                <el-form
                   :model="truckDriverData"
                   label-position="left"
                   :label-width="80"
                 >
-                  <FormItem label="司机名称">
-                    <Input
+                  <el-form-item label="司机名称">
+                    <el-input
                       :disabled="isdisabled"
                       v-model="truckDriverData.name"
-                    ></Input>
-                  </FormItem>
-                  <FormItem label="所属车队">
-                    <Input disabled v-model="truckDriverData.fleetName"></Input>
-                  </FormItem>
-                  <FormItem label="年龄">
-                    <Input
+                    ></el-input>
+                  </el-form-item>
+                  <el-form-item label="所属车队">
+                    <el-input disabled v-model="truckDriverData.fleetName"></el-input>
+                  </el-form-item>
+                  <el-form-item label="年龄">
+                    <el-input
                       :disabled="isdisabled"
                       v-model="truckDriverData.age"
-                    ></Input>
-                  </FormItem>
-                </Form>
+                    ></el-input>
+                  </el-form-item>
+                </el-form>
               </div>
             </div>
             <hr />
@@ -68,18 +68,18 @@
             <h3>驾驶征信息</h3>
             <div style="display: flex; justify-content: space-around">
               <div style="width: 400px">
-                <Form
+                <el-form
                   :model="truckDriverLicenseData"
                   label-position="left"
                   :label-width="100"
                 >
-                  <FormItem label="驾驶证号">
-                    <Input
+                  <el-form-item label="驾驶证号">
+                    <el-input
                       :disabled="isdisabled"
                       v-model="truckDriverLicenseData.licenseNumber"
-                    ></Input>
-                  </FormItem>
-                  <FormItem label="初次领证日期">
+                    ></el-input>
+                  </el-form-item>
+                  <el-form-item label="初次领证日期">
                     <el-date-picker
                       style="width: 300px"
                       format="yyyy-MM-dd"
@@ -89,20 +89,20 @@
                       placeholder="请选择注册时间"
                     >
                     </el-date-picker>
-                  </FormItem>
-                  <FormItem label="驾龄">
-                    <Input
+                  </el-form-item>
+                  <el-form-item label="驾龄">
+                    <el-input
                       :disabled="isdisabled"
                       v-model="truckDriverLicenseData.driverAge"
-                    ></Input>
-                  </FormItem>
-                  <FormItem label="从业资格证">
-                    <Input
+                    ></el-input>
+                  </el-form-item>
+                  <el-form-item label="从业资格证">
+                    <el-input
                       :disabled="isdisabled"
                       v-model="truckDriverLicenseData.qualificationCertificate"
-                    ></Input>
-                  </FormItem>
-                  <FormItem label="图片信息">
+                    ></el-input>
+                  </el-form-item>
+                  <el-form-item label="图片信息">
                     <el-upload
                       :disabled="isdisabled"
                       class="avatar-uploader"
@@ -119,43 +119,43 @@
                       />
                       <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                     </el-upload>
-                  </FormItem>
-                </Form>
+                  </el-form-item>
+                </el-form>
               </div>
 
               <div style="width: 400px">
-                <Form
+                <el-form
                   :model="truckDriverLicenseData"
                   label-position="left"
                   :label-width="100"
                 >
-                  <FormItem label="准驾车型">
-                    <Input
+                  <el-form-item label="准驾车型">
+                    <el-input
                       :disabled="isdisabled"
                       v-model="truckDriverLicenseData.allowableType"
-                    ></Input>
-                  </FormItem>
-                  <FormItem label="驾驶证有效期">
-                    <Input
+                    ></el-input>
+                  </el-form-item>
+                  <el-form-item label="驾驶证有效期">
+                    <el-input
                       :disabled="isdisabled"
                       v-model="truckDriverLicenseData.validPeriod"
                     >
-                      <template slot="append">年</template></Input
+                      <template slot="append">年</template></el-input
                     >
-                  </FormItem>
-                  <FormItem label="驾驶证类型">
-                    <Input
+                  </el-form-item>
+                  <el-form-item label="驾驶证类型">
+                    <el-input
                       :disabled="isdisabled"
                       v-model="truckDriverLicenseData.licenseType"
-                    ></Input>
-                  </FormItem>
-                  <FormItem label="入场证信息">
-                    <Input
+                    ></el-input>
+                  </el-form-item>
+                  <el-form-item label="入场证信息">
+                    <el-input
                       :disabled="isdisabled"
                       v-model="truckDriverLicenseData.passCertificate"
-                    ></Input>
-                  </FormItem>
-                </Form>
+                    ></el-input>
+                  </el-form-item>
+                </el-form>
               </div>
             </div>
             <hr />

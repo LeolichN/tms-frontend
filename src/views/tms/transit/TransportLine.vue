@@ -218,27 +218,27 @@
 
     <!--  model  -->
     <div>
-      <Modal
+      <el-dialog
         v-model="detailsmodal"
         title="安排司机"
         @on-ok="arrangeDetails"
         @on-cancel="cancel"
       >
-        <Form :model="UpdatetransportTripsData" :label-width="100">
-          <FormItem label="车次名称" prop="name">
-            <Input
+        <el-form :model="UpdatetransportTripsData" :label-width="100">
+          <el-form-item label="车次名称" prop="name">
+            <el-input
               v-model="UpdatetransportTripsData.name"
               placeholder="名称"
-            ></Input>
-          </FormItem>
-          <FormItem label="发车时间">
-            <Input
+            ></el-input>
+          </el-form-item>
+          <el-form-item label="发车时间">
+            <el-input
               disabled
               v-model="UpdatetransportTripsData.departureTime"
               placeholder="Enter your name"
-            ></Input>
-          </FormItem>
-          <FormItem label="安排司机">
+            ></el-input>
+          </el-form-item>
+          <el-form-item label="安排司机">
             <el-select
               v-model="UpdatetransportTripsData.userId"
               placeholder="请选择"
@@ -257,31 +257,31 @@
                 </el-option>
               </el-option-group>
             </el-select>
-          </FormItem>
-        </Form>
-      </Modal>
+          </el-form-item>
+        </el-form>
+      </el-dialog>
 
-      <Modal
+      <el-dialog
         v-model="trucksmodal"
         title="安排车俩"
         @on-ok="arrangeTruck"
         @on-cancel="cancel"
       >
-        <Form :model="UpdatetransportTripsData" :label-width="100">
-          <FormItem label="车次名称" prop="name">
-            <Input
+        <el-form :model="UpdatetransportTripsData" :label-width="100">
+          <el-form-item label="车次名称" prop="name">
+            <el-input
               v-model="UpdatetransportTripsData.name"
               placeholder="名称"
-            ></Input>
-          </FormItem>
-          <FormItem label="发车时间">
-            <Input
+            ></el-input>
+          </el-form-item>
+          <el-form-item label="发车时间">
+            <el-input
               disabled
               v-model="UpdatetransportTripsData.departureTime"
               placeholder="Enter your name"
-            ></Input>
-          </FormItem>
-          <FormItem label="安排车俩">
+            ></el-input>
+          </el-form-item>
+          <el-form-item label="安排车俩">
             <el-select
               v-model="UpdatetransportTripsData.truckId"
               placeholder="请选择"
@@ -300,31 +300,31 @@
                 </el-option>
               </el-option-group>
             </el-select>
-          </FormItem>
-        </Form>
-      </Modal>
+          </el-form-item>
+        </el-form>
+      </el-dialog>
 
-      <Modal
+      <el-dialog
         v-model="UpdateTransportTripsmodal"
         title="修改车次"
         @on-ok="updatePdTransportTrips"
         @on-cancel="cancel"
       >
-        <Form :model="UpdatetransportTripsData" :label-width="100">
-          <!-- <FormItem label="线路名称" prop="TransportLineName">
-            <Input
+        <el-form :model="UpdatetransportTripsData" :label-width="100">
+          <!-- <el-form-item label="线路名称" prop="TransportLineName">
+            <el-input
               disabled
               v-model="UpdatetransportTripsData.TransportLineName"
               placeholder="Enter your name"
-            ></Input>
-          </FormItem> -->
-          <FormItem label="车次名称" prop="name">
-            <Input
+            ></el-input>
+          </el-form-item> -->
+          <el-form-item label="车次名称" prop="name">
+            <el-input
               v-model="UpdatetransportTripsData.name"
               placeholder="名称"
-            ></Input>
-          </FormItem>
-          <FormItem label="发车时间">
+            ></el-input>
+          </el-form-item>
+          <el-form-item label="发车时间">
             <Row>
               <Col span="11">
                 <TimePicker
@@ -335,38 +335,38 @@
               </Col>
               <Col span="2" style="text-align: center"> </Col>
               <Col span="11">
-                <Select
+                </el-select
                   v-model="UpdatetransportTripsData.period"
                   style="width: 178px"
                 >
-                  <Option :value="1">天</Option>
-                  <Option :value="2">周</Option>
-                  <Option :value="3">月</Option>
-                </Select>
+                  <el-option :value="1">天</el-option>
+                  <el-option :value="2">周</el-option>
+                  <el-option :value="3">月</el-option>
+                </el-select>
               </Col>
             </Row>
-          </FormItem>
-        </Form>
-      </Modal>
+          </el-form-item>
+        </el-form>
+      </el-dialog>
 
-      <Modal
+      <el-dialog
         v-model="TransportTripsmodal"
         title="增加车次"
         @on-ok="addPdTransportTrips"
         @on-cancel="cancel"
       >
-        <Form :model="transportTripsData" :label-width="100">
-          <FormItem label="线路名称" prop="TransportLineName">
-            <Input
+        <el-form :model="transportTripsData" :label-width="100">
+          <el-form-item label="线路名称" prop="TransportLineName">
+            <el-input
               disabled
               v-model="transportTripsData.TransportLineName"
               placeholder="Enter your name"
-            ></Input>
-          </FormItem>
-          <FormItem label="车次名称" prop="name">
-            <Input v-model="transportTripsData.name" placeholder="名称"></Input>
-          </FormItem>
-          <FormItem label="发车时间">
+            ></el-input>
+          </el-form-item>
+          <el-form-item label="车次名称" prop="name">
+            <el-input v-model="transportTripsData.name" placeholder="名称"></el-input>
+          </el-form-item>
+          <el-form-item label="发车时间">
             <Row>
               <Col span="11">
                 <TimePicker
@@ -377,19 +377,19 @@
               </Col>
               <Col span="2" style="text-align: center"> </Col>
               <Col span="11">
-                <Select
+                </el-select
                   v-model="transportTripsData.period"
                   style="width: 178px"
                 >
-                  <Option :value="1">天</Option>
-                  <Option :value="2">周</Option>
-                  <Option :value="3">月</Option>
-                </Select>
+                  <el-option :value="1">天</el-option>
+                  <el-option :value="2">周</el-option>
+                  <el-option :value="3">月</el-option>
+                </el-select>
               </Col>
             </Row>
-          </FormItem>
-        </Form>
-      </Modal>
+          </el-form-item>
+        </el-form>
+      </el-dialog>
 
       <!-- 查看地图> -->
       <el-dialog
@@ -421,135 +421,135 @@
         </span>
       </el-dialog>
       <!-- 修改线路信息 -->
-      <Modal
+      <el-dialog
         v-model="modal2"
         title="修改线路信息"
         @on-ok="updataTransportLine"
         @on-cancel="cancel"
       >
-        <Form
+        <el-form
           :model="updateTransportLineData"
           label-position="left"
           :label-width="100"
         >
-          <FormItem label="线路编号">
-            <Input v-model="updateTransportLineData.lineNumber"></Input>
-          </FormItem>
-          <FormItem label="线路名称">
-            <Input v-model="updateTransportLineData.name"></Input>
-          </FormItem>
-          <FormItem label="线路类型">
-            <Select v-model="updateTransportLineData.transportLineTypeId">
-              <Option
+          <el-form-item label="线路编号">
+            <el-input v-model="updateTransportLineData.lineNumber"></el-input>
+          </el-form-item>
+          <el-form-item label="线路名称">
+            <el-input v-model="updateTransportLineData.name"></el-input>
+          </el-form-item>
+          <el-form-item label="线路类型">
+            </el-select v-model="updateTransportLineData.transportLineTypeId">
+              <el-option
                 v-for="(data, index) in TransportLineTypeList"
                 :key="index"
                 :value="data.id"
-                >{{ data.name }}</Option
+                >{{ data.name }}</el-option
               >
-            </Select>
-          </FormItem>
-          <FormItem label="起始机构类型">
-            <Select v-model="updateTransportLineData.startAgencyId">
-              <Option
+            </el-select>
+          </el-form-item>
+          <el-form-item label="起始机构类型">
+            </el-select v-model="updateTransportLineData.startAgencyId">
+              <el-option
                 v-for="(data, index) in orgList"
                 :key="index"
                 :value="data.id"
-                >{{ data.name }}</Option
+                >{{ data.name }}</el-option
               >
-            </Select>
-          </FormItem>
-          <FormItem label="终点机构类型">
-            <Select v-model="updateTransportLineData.endAgencyId">
-              <Option
+            </el-select>
+          </el-form-item>
+          <el-form-item label="终点机构类型">
+            </el-select v-model="updateTransportLineData.endAgencyId">
+              <el-option
                 v-for="(data, index) in orgList"
                 :key="index"
                 :value="data.id"
-                >{{ data.name }}</Option
+                >{{ data.name }}</el-option
               >
-            </Select>
-          </FormItem>
-          <FormItem label="距离">
-            <Input v-model="updateTransportLineData.distance">
-              <template slot="append">千米</template></Input
+            </el-select>
+          </el-form-item>
+          <el-form-item label="距离">
+            <el-input v-model="updateTransportLineData.distance">
+              <template slot="append">千米</template></el-input
             >
-          </FormItem>
-          <FormItem label="成本">
-            <Input v-model="updateTransportLineData.cost">
+          </el-form-item>
+          <el-form-item label="成本">
+            <el-input v-model="updateTransportLineData.cost">
               <template slot="append">元</template>
-            </Input>
-          </FormItem>
-          <FormItem label="分钟">
-            <Input v-model="updateTransportLineData.estimatedTime">
+            </el-input>
+          </el-form-item>
+          <el-form-item label="分钟">
+            <el-input v-model="updateTransportLineData.estimatedTime">
               <template slot="append">分钟</template>
-            </Input>
-          </FormItem>
-        </Form>
-      </Modal>
+            </el-input>
+          </el-form-item>
+        </el-form>
+      </el-dialog>
       <!-- 添加线路信息 -->
-      <Modal
+      <el-dialog
         v-model="modal"
         title="添加线路信息"
         @on-ok="addTransportLine"
         @on-cancel="cancel"
       >
-        <Form
+        <el-form
           :model="addTransportLineData"
           label-position="left"
           :label-width="100"
         >
-          <FormItem label="线路编号">
-            <Input v-model="addTransportLineData.lineNumber"></Input>
-          </FormItem>
-          <FormItem label="线路名称">
-            <Input v-model="addTransportLineData.name"></Input>
-          </FormItem>
-          <FormItem label="线路类型">
-            <Select v-model="addTransportLineData.transportLineTypeId">
-              <Option
+          <el-form-item label="线路编号">
+            <el-input v-model="addTransportLineData.lineNumber"></el-input>
+          </el-form-item>
+          <el-form-item label="线路名称">
+            <el-input v-model="addTransportLineData.name"></el-input>
+          </el-form-item>
+          <el-form-item label="线路类型">
+            </el-select v-model="addTransportLineData.transportLineTypeId">
+              <el-option
                 v-for="(data, index) in TransportLineTypeList"
                 :key="index"
                 :value="data.id"
-                >{{ data.name }}</Option
+                >{{ data.name }}</el-option
               >
-            </Select>
-          </FormItem>
-          <FormItem label="起始机构类型">
-            <Select v-model="addTransportLineData.startAgencyId">
-              <Option
+            </el-select>
+          </el-form-item>
+          <el-form-item label="起始机构类型">
+            </el-select v-model="addTransportLineData.startAgencyId">
+              <el-option
                 v-for="(data, index) in orgList"
                 :key="index"
                 :value="data.id"
-                >{{ data.name }}</Option
+                >{{ data.name }}</el-option
               >
-            </Select>
-          </FormItem>
-          <FormItem label="终点机构类型">
-            <Select v-model="addTransportLineData.endAgencyId">
-              <Option
+            </el-select>
+          </el-form-item>
+          <el-form-item label="终点机构类型">
+            </el-select v-model="addTransportLineData.endAgencyId">
+              <el-option
                 v-for="(data, index) in orgList"
                 :key="index"
                 :value="data.id"
-                >{{ data.name }}</Option
+                >{{ data.name }}</el-option
               >
-            </Select>
-          </FormItem>
-          <FormItem label="距离">
-            <Input v-model="addTransportLineData.distance">
-              <template slot="append">千米</template></Input
+            </el-select>
+          </el-form-item>
+          <el-form-item label="距离">
+            <el-input v-model="addTransportLineData.distance">
+              <template slot="append">千米</template></el-input
             >
-          </FormItem>
-          <FormItem label="成本">
-            <Input v-model="addTransportLineData.cost">
+          </el-form-item>
+          <el-form-item label="成本">
+            <el-input v-model="addTransportLineData.cost">
               <template slot="append">元</template>
-            </Input>
-          </FormItem>
-          <FormItem label="分钟">
-            <Input v-model="addTransportLineData.estimatedTime">
+            </el-input>
+          </el-form-item>
+          <el-form-item label="分钟">
+            <el-input v-model="addTransportLineData.estimatedTime">
               <template slot="append">分钟</template>
-            </Input>
-          </FormItem>
-        </Form>
-      </Modal>
+            </el-input>
+          </el-form-item>
+        </el-form>
+      </el-dialog>
     </div>
   </div>
 </template>

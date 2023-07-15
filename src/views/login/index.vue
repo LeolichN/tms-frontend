@@ -9,7 +9,7 @@
       label-position="left"
     >
       <div class="title-container">
-        <img src="../../assets/logo1.png" />
+        <!-- <img src="../../assets/logo1.png" /> -->
       </div>
       <span v-if="login.type === 'up'">
         <el-form-item v-show="isMultiTenant" prop="tenant">
@@ -634,7 +634,7 @@ $dark_gray: #aaa;
 $light_gray: #eee;
 
 .login-container {
-  background: url(../../assets/background.png) 60% no-repeat;
+  background: url(../../assets/background1.jpg) 60% no-repeat;
   // background-color: #2d3a4b;
   background-size: cover;
   width: 65%;

@@ -70,47 +70,105 @@ const constRouter = [
   {
     path: '/order-manage',
     redirect: '/order-manage/list',
-    component: {render:(e) => e("router-view")},
+    component: { render: (e) => e("router-view") },
     children: [{
       path: 'list',
       meta: {
         i18n: 'test'
       },
       component: () =>
-        import(  '@/views/tms/order/Index')
-      },{
-        path: 'detail',
-        meta: {
-          i18n: 'test'
-        },
-        component: () =>
-          import(  '@/views/tms/order/Detail')
-        }]
+        import('@/views/tms/order/Index')
+    }, {
+      path: 'detail',
+      meta: {
+        i18n: 'test'
+      },
+      component: () =>
+        import('@/views/tms/order/Detail')
+    }]
   },
   {
     path: '/transOrder',
     redirect: '/transOrder/list',
-    component: {render:(e) => e("router-view")},
+    component: { render: (e) => e("router-view") },
     children: [{
       path: 'list',
       meta: {
         i18n: 'test'
       },
       component: () =>
-        import(  '@/views/tms/trans-order/Index')
-      }]
+        import('@/views/tms/trans-order/Index')
+    }]
   },
   {
-    path: '/branches', 
-    component: {render:(e) => e("router-view")},
+    path: '/transport',
+    redirect: '/transport/list',
+    component: { render: (e) => e("router-view") },
+    children: [{
+      path: 'list',
+      component: () =>
+        import('@/views/tms/transport/tasktransport')
+    }]
+  },
+  {
+    path: '/transit',
+    component: { render: (e) => e("router-view") },
+    children: [{
+      path: 'car-models',
+      component: () =>
+        import('@/views/tms/transit/TruckType')
+    },
+    {
+      path: 'motorcade',
+      component: () =>
+        import('@/views/tms/transit/FleetManage')
+    },
+    {
+      path: 'vehicle',
+      component: () =>
+        import('@/views/tms/transit/TruckManage')
+    },
+    {
+      path: 'driver',
+      component: () =>
+        import('@/views/tms/transit/TruckDriver')
+    },
+    {
+      path: 'line-manage',
+      component: () =>
+        import('@/views/tms/transit/TransportLine')
+    },
+    {
+      path: 'line-type',
+      component: () =>
+        import('@/views/tms/transit/TransportLineType')
+    },]
+  },
+  {
+    path: '/branches',
+    component: { render: (e) => e("router-view") },
     children: [{
       path: 'goods-type',
-      meta: {
-        i18n: 'test'
-      },
       component: () =>
-        import(  '@/views/tms/goods/Index')
-      }]
+        import('@/views/tms/goods/Index')
+    }, {
+      path: 'operational-range',
+      component: () =>
+        import('@/views/tms/branch/courierScope')
+    }, {
+      path: 'operational',
+      component: () =>
+        import('@/views/tms/branch/courierOrder')
+    }]
+  },
+  {
+    path: '/organization',
+    component: { render: (e) => e("router-view") },
+    children: [{
+      path: 'institutions-jobs-area',
+      component: () =>
+        import('@/views/tms/org-area/org-area')
+    }]
   },
   {
     path: '/error',
@@ -226,9 +284,9 @@ function filterAsyncRouter(routes) {
 }
 
 function view(path) {
-  return  (resolve) =>
-     require([`@/views/${path}`],resolve)
-  
+  return (resolve) =>
+    require([`@/views/${path}`], resolve)
+
 }
 
 export default router
