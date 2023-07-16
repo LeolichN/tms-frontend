@@ -69,7 +69,6 @@ const constRouter = [
   },
   {
     path: '/order-manage',
-    redirect: '/order-manage/list',
     component: { render: (e) => e("router-view") },
     children: [{
       path: 'list',

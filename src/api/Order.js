@@ -3,15 +3,15 @@ import axiosApi from './AxiosApi.js'
 const apiList = {
   page: {
     method: 'POST',
-    url: `order-manager/order/page`
+    url: `web-manager/order/page`
   },
   get: {
     method: 'GET',
-    url: `order-manager/order/`
+    url: `web-manager/order/`
   },
   update: {
     method: 'POST',
-    url: `order-manager/order`
+    url: `web-manager/order`
   },
 }
 
